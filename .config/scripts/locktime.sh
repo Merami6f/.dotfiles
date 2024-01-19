@@ -1,8 +1,8 @@
-#/bin/sh
+#!/usr/bin/env bash
 
 if [[ -f "/usr/bin/swayidle" ]]; then
   echo "swayidle is installed"
-  swayidle -w timeout 300 'swaylock -f' timeout 360 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
+  swayidle -w timeout 300 'swaylock -f' timeout 360 'systemctl suspend' resume 'hyprctl dispatch dpms on'
   else
     echo "swayidle not installed"
 fi;
