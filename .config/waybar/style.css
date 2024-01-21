@@ -86,12 +86,12 @@ window#waybar.solo {
 #custom-power,
 #sway-scratchpad,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     margin: 3px 3px;
     /* color: #282a36; */
     color: #f8f8f2;
     /* background: #89a0e0; */
-    border : 1px solid #ffffff;
+    border : 0px solid #ffffff;
     border-radius : 3px;
 }
 
