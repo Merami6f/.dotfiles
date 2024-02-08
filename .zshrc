@@ -219,9 +219,9 @@ bindkey '^F' fzf-cd
 bindkey '^K' fzf-nvim
 
 # Enable autocompletation again
-source ~/.fzf/shell/completion.zsh
+#source ~/.fzf/shell/completion.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ########## My Alias  ##########
 
@@ -251,8 +251,6 @@ alias cc='cliphist wipe'
 export  PATH=/opt/nvim/bin:$PATH
 
 # NodeJs
-export PATH=/opt/node-v21.5.0/bin:$PATH
+export PATH=/opt/node-v21.6.0/bin:$PATH
 
-# flutter
-export PATH=/opt/flutter/bin:$PATH
 
