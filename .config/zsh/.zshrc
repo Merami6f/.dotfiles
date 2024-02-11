@@ -18,10 +18,10 @@ compinit
 # End of lines added by compinstall
 
 # plugins
-source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -60,5 +60,5 @@ alias cc='cliphist wipe'
 export  PATH=/opt/nvim/bin:$PATH
 
 # NodeJs
-export PATH=/opt/node-v21.6.0/bin:$PATH
+export PATH=/opt/node-rt/bin:$PATH
 
