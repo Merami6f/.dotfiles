@@ -37,6 +37,7 @@ bindkey '^[OB' history-substring-search-down
 ########## My Alias  ##########
 
 alias ll="lsd -la"
+alias ls="ls --color=tty"
 
 # kitty image
 alias img='kitten icat'
