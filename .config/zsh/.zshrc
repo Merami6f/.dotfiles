@@ -7,21 +7,21 @@ fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1001
-SAVEHIST=1001
+HISTSIZE=11001
+SAVEHIST=10001
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/merami/.zshrc'
+zstyle :compinstall filename '/home/merami/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
 # plugins
-source ~/.config/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -57,9 +57,9 @@ alias sleep='systemctl suspend'
 alias cc='cliphist wipe'
 
 ############# MY PATH LIST ####################
-# NVIM
-export  PATH=/opt/nvim/bin:$PATH
 
 # NodeJs
-export PATH=/opt/node-rt/bin:$PATH
+# export PATH=/opt/node-rt/bin:$PATH
 
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
