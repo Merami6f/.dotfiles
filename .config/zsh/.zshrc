@@ -34,7 +34,7 @@ bindkey '^[OB' history-substring-search-down
 # To customize prompt, run `p10k configure` or edit ~/.config//zsh//.p10k.zsh.
 [[ ! -f ~/.config//zsh//.p10k.zsh ]] || source ~/.config//zsh//.p10k.zsh
 
-########## My Alias  ##########
+########## Alias  ##########
 
 alias ll="lsd -la"
 alias ls="ls --color=tty"
