@@ -36,11 +36,11 @@ button:hover {
 }
 
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: #2b303b;
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 10px;
     background-color: transparent;
     color: #ffffff;
 }
@@ -152,16 +152,6 @@ label:focus {
     background-color: #90b1b1;
     color: #2a5c45;
 }
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
 
 #temperature.critical {
     background-color: #eb4d4b;
