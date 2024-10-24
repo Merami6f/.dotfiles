@@ -1,5 +1,4 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config//zsh//.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -34,20 +33,13 @@ bindkey '^[OB' history-substring-search-down
 # To customize prompt, run `p10k configure` or edit ~/.config//zsh//.p10k.zsh.
 [[ ! -f ~/.config//zsh//.p10k.zsh ]] || source ~/.config//zsh//.p10k.zsh
 
-########## Alias  ##########
+## Alias 
 
 alias ll="lsd -la"
 alias ls="ls --color=tty"
 
 # kitty image
 alias img='kitten icat'
-
-#Wifi
-#get wifi list | nmcli dev wifi list
-alias wifi='nmcli dev wifi list'
-#connect to wifi | sudo nmcli --ask dev wifi connect network-ssid
-#if wifi name have space character put ''
-alias wifi-connect='sudo nmcli --ask dev wifi connect '
 
 #PC commands
 alias off='shutdown -h now'
@@ -56,10 +48,5 @@ alias sleep='systemctl suspend'
 #clear clipboard
 alias cc='cliphist wipe'
 
-############# MY PATH LIST ####################
-
-# NodeJs
-# export PATH=/opt/node-rt/bin:$PATH
-export PATH="$PATH:$HOME/.local/bin"
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+## fzf 
+source <(fzf --zsh)
