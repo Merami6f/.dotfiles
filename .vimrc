@@ -1,10 +1,19 @@
 " Options 
-syntax off
-colorscheme zaibatsu
+colorscheme retrobox
+set background=dark
+
+syntax on
 set number
-set nowrap
 set relativenumber
 set numberwidth=2
+set showcmd
+set nowrap
+set incsearch
+
+set cindent
+set tabstop=4
+set shiftwidth=4
+set smartindent
 
 " Cursor
 let &t_SI = "\e[6 q"
@@ -13,24 +22,26 @@ let &t_EI = "\e[2 q"
 " Keymaps
 let mapleader= " "
 noremap <leader>sv :source $MYVIMRC<cr>
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '>-4<cr>gv=gv
+
+noremap <leader>ff :Files<cr>
+noremap <leader>fg :RG<cr>
+noremap <leader>b :Buffers<cr>
+
+" Vim-plugin
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
 
 " Statusline
 set laststatus=2
 set statusline=
-set statusline+=%F
-set statusline+=\ 
+set statusline+=%{StatuslineMode()}
 set statusline+=%m
 set statusline+=%=
-set statusline+=>
-set statusline+=>
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=%{StatuslineMode()}
-set statusline+=\ 
-set statusline+=<
-set statusline+=<
-set statusline+=\ 
-set statusline+=\ 
+set statusline+=%F
 
 function! StatuslineMode()
   let l:mode=mode()
@@ -52,4 +63,3 @@ function! StatuslineMode()
     return "SHELL"
   endif
 endfunction
-
