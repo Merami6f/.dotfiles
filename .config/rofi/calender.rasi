@@ -12,7 +12,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "~/.config/rofi/shared/colors.rasi"
+@import "~/.config/rofi/shared/gruvbox-dark-hard.rasi"
 
 window {
     transparency:                   "real";

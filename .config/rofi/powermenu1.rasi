@@ -4,7 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
+@import                          "shared/gruvbox-dark-hard.rasi"
 @import                          "shared/fonts.rasi"
 
 /*
@@ -14,7 +14,6 @@ USE_BUTTONS=YES
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
-    transparency:                "real";
     location:                    northeast;
     fullscreen:                  false;
     width:                       70px;
@@ -27,9 +26,9 @@ window {
     padding:                     0px;
     border:                      1px solid;
     border-radius:               8px;
-    border-color:                @selected;
+    border-color:                @background;
     cursor:                      "default";
-    background-color:            black / 50%;
+    background-color:            @background;
 }
 
 /*****----- Main Box -----*****/
@@ -40,7 +39,7 @@ mainbox {
     padding:                     5px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border-color;
     background-color:            transparent;
     children:                    [ "listview" ];
 }
@@ -53,7 +52,7 @@ inputbar {
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border-color;
     background-color:            transparent;
     text-color:                  @foreground;
     children:                    [ "textbox-prompt-colon", "prompt"];
@@ -69,14 +68,14 @@ textbox-prompt-colon {
     str:                         "";
     padding:                     6px 8px;
     border-radius:               0px;
-    background-color:            @urgent;
+    background-color:            @urgent-background;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     6px;
     border-radius:               0px;
-    background-color:            @active;
+    background-color:            @active-background;
     text-color:                  @background;
 }
 
@@ -87,8 +86,8 @@ message {
     padding:                     12px;
     border:                      1px solid;
     border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background-alt;
+    border-color:                @border-color;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
@@ -104,7 +103,7 @@ error-message {
     padding:                     12px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border-color;
     background-color:            @background;
     text-color:                  @foreground;
 }
@@ -127,7 +126,7 @@ listview {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border-color;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
@@ -141,8 +140,8 @@ element {
     padding:                     4px 0px;
     border:                      1px solid;
     border-radius:               5px;
-    border-color:                @selected;
-    background-color:            @background-alt;
+    border-color:                @border-color;
+    background-color:            @background;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
@@ -154,7 +153,7 @@ element-text {
     vertical-align:              0.4;
     horizontal-align:            0.4;
 }
-element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+element border-color.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
 }
