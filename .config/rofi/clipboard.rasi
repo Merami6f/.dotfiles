@@ -1,7 +1,7 @@
 /* ---- Configuration ---- */
 configuration {
     modi:                       "drun,run";
-    font:                           "Iosevka 12";
+    font:                       "Iosevka 12";
     show-icons:                 false;
     icon-theme:                 "kora";
     display-drun:               "APPS";
@@ -17,8 +17,8 @@ configuration {
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */
-@import "~/.config/rofi/shared/fonts.rasi"
-@import "~/.config/rofi/shared/colors.rasi"
+@import "/shared/fonts.rasi"
+@import "/shared/retrobox.rasi"
 
 /* ---- Window ---- */
 window {
@@ -28,9 +28,9 @@ window {
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 
-    color:                        #FFFFFF;
-    border:                       1px;
-    border-color:                 #FFFFFF;
+    color:                        @fg0;
+    border:                       2px;
+    border-color:                 @blue;
     cursor:                       "default";
     transparency:                 "real";
     location:                     north;
@@ -47,7 +47,7 @@ mainbox {
     orientation:                  horizontal;
     spacing:                      0px;
     margin:                       0px;
-    background-color:             white / 20%;
+    background-color:             @bg0; 
     children:                     ["listbox"];
 }
 
@@ -75,12 +75,12 @@ dummy {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                      true;
-    text-color:                   @foreground;
+    text-color:                   @fg0;
     spacing:                      10px;
     padding:                      15px;
-    border-radius:                0px;
-    border-color:                 @foreground;
-    background-color:             black / 30%;
+    border-radius:                5px;
+    border-color:                 @blue;
+    background-color:             @bg0;
     children:                     [ "textbox-prompt-colon", "entry" ];
 }
 
@@ -106,13 +106,13 @@ mode-switcher{
     enabled:                      true;
     spacing:                      20px;
     background-color:             transparent;
-    text-color:                   @foreground;
+    text-color:                   @fg0;
 }
 
 button {
     padding:                      10px;
     border-radius:                10px;
-    background-color:             white / 20%;
+    background-color:             @bg1;
     text-color:                   inherit;
     cursor:                       pointer;
     border:                       0px;
@@ -120,7 +120,7 @@ button {
 
 button selected {
     background-color:             blue;
-    text-color:                   @foreground;
+    text-color:                   @fg0;
 }
 
 /* ---- Listview ---- */
@@ -138,7 +138,7 @@ listview {
     spacing:                      0px;
     padding:                      10px;
     margin:                       0px;
-    background-color:             black / 20%;
+    background-color:             @bg0;
     border:0px;
 }
 
@@ -148,54 +148,54 @@ element {
     padding:                      10px;
     margin:                       5px;
     cursor:                       pointer;
-    background-color:             white;
+    background-color:             @bg0;
     border-radius:                10px;
     border:                       2px;
 }
 
 element normal.normal {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element normal.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element normal.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element selected.normal {
-    background-color:            blue;
-    text-color:                  @foreground;
+    background-color:            @blue;
+    text-color:                  @fg0;
 }
 
 element selected.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element selected.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element alternate.normal {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element alternate.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element alternate.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
 }
 
 element-icon {
@@ -227,8 +227,8 @@ textbox {
     padding:                     15px;
     margin:                      0px;
     border-radius:               0px;
-    background-color:            white / 20%;
-    text-color:                  @foreground;
+    background-color:            @bg1;
+    text-color:                  @fg0;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
@@ -236,6 +236,6 @@ textbox {
 error-message {
     padding:                     15px;
     border-radius:               20px;
-    background-color:            white / 20%;
-    text-color:                  @foreground;
+    background-color:            @bg1;
+    text-color:                  @fg0;
 }
