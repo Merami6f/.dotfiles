@@ -9,6 +9,7 @@ set numberwidth=2
 set showcmd
 set nowrap
 set incsearch
+set cursorline
 
 set cindent
 set tabstop=4
