@@ -4,7 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/gruvbox-dark-hard.rasi"
+@import                          "shared/retrobox.rasi"
 @import                          "shared/fonts.rasi"
 
 /*
@@ -24,11 +24,11 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      2px solid;
     border-radius:               8px;
-    border-color:                @background;
+    border-color:                @blue;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @bg0;
 }
 
 /*****----- Main Box -----*****/
@@ -39,8 +39,8 @@ mainbox {
     padding:                     5px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @border-color;
-    background-color:            transparent;
+    border-color:                @blue;
+    background-color:            @bg1;
     children:                    [ "listview" ];
 }
 
@@ -52,9 +52,9 @@ inputbar {
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @border-color;
+    border-color:                @blue;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
     children:                    [ "textbox-prompt-colon", "prompt"];
 }
 
@@ -68,15 +68,15 @@ textbox-prompt-colon {
     str:                         "";
     padding:                     6px 8px;
     border-radius:               0px;
-    background-color:            @urgent-background;
-    text-color:                  @background;
+    background-color:            @red;
+    text-color:                  @bg0;
 }
 prompt {
     enabled:                     true;
     padding:                     6px;
     border-radius:               0px;
-    background-color:            @active-background;
-    text-color:                  @background;
+    background-color:            @grey;
+    text-color:                  @bg0;
 }
 
 /*****----- Message -----*****/
@@ -84,18 +84,18 @@ message {
     enabled:                     true;
     margin:                      0px;
     padding:                     12px;
-    border:                      1px solid;
+    border:                      2px solid;
     border-radius:               0px;
-    border-color:                @border-color;
-    background-color:            @background;
-    text-color:                  @foreground;
+    border-color:                @blue;
+    background-color:            @bg1;
+    text-color:                  @fg0;
 }
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.5;
-    placeholder-color:           @foreground;
+    placeholder-color:           @fg0;
     blink:                       true;
     markup:                      true;
 }
@@ -103,9 +103,9 @@ error-message {
     padding:                     12px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @border-color;
-    background-color:            @background;
-    text-color:                  @foreground;
+    border-color:                @blue;
+    background-color:            @bg0;
+    text-color:                  @fg0;
 }
 
 /*****----- Listview -----*****/
@@ -126,9 +126,9 @@ listview {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @border-color;
+    border-color:                @blue;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @fg0;
     cursor:                      "default";
 }
 
@@ -138,12 +138,23 @@ element {
     spacing:                     0px;
     margin:                      0px;
     padding:                     4px 0px;
-    border:                      1px solid;
+    border:                      2px solid;
     border-radius:               5px;
-    border-color:                @border-color;
-    background-color:            @background;
-    text-color:                  @foreground;
+    border-color:                @blue;
+    background-color:            transparent;
+    text-color:                  @fg0;
     cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg0;
+}
+element selected.normal {
+    border:                      2px solid;
+    border-radius:               4px;
+    border-color:                @aqua;
+    background-color:            @bg3;
+    text-color:                  @green;
 }
 element-text {
     font:                        "feather bold 24";
@@ -154,6 +165,6 @@ element-text {
     horizontal-align:            0.4;
 }
 element border-color.normal {
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @green;
+    text-color:                  @red;
 }
