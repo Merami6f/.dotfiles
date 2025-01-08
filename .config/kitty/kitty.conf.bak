@@ -4,7 +4,7 @@ Fonts {{{
 # italic_font      Iosevka-Custom-Italic
 # bold_italic_font Iosevka-Custom-Italic
  font_size 12
-background_opacity 0.80
+background_opacity 1
 }}}
 
  Window layout {{{
@@ -26,12 +26,9 @@ enabled_layouts tall:bias=50;full_size=1;mirrored=false
 │              │               │
 │              │               │
 └──────────────┴───────────────┘
-
- active_border_color #00ff00
-
- inactive_border_color #cccccc
-
- bell_border_color #ff5a00
+# active_border_color #00ff00
+# inactive_border_color #cccccc
+# bell_border_color #ff5a00
 
  }}}
 
@@ -39,12 +36,11 @@ Tab bar {{{
 
 tab_bar_edge bottom
 tab_bar_style powerline
-
- active_tab_foreground   #000
- active_tab_background   #eee
+# active_tab_foreground   #000
+# active_tab_background   #eee
  active_tab_font_style   bold
- inactive_tab_foreground #444
- inactive_tab_background #999
+# inactive_tab_foreground #444
+# inactive_tab_background #999
  inactive_tab_font_style normal
 
 }}}
@@ -174,3 +170,9 @@ bold_font        family='Iosevka Custom' postscript_name=Iosevka-Custom
 italic_font      family='Iosevka Custom' postscript_name=Iosevka-Custom-Italic
 bold_italic_font family='Iosevka Custom' postscript_name=Iosevka-Custom-Italic
 # END_KITTY_FONTS
+
+
+# BEGIN_KITTY_THEME
+# Gruvbox Dark Hard
+include current-theme.conf
+# END_KITTY_THEME
