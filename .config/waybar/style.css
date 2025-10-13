@@ -2,7 +2,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 window#waybar {
@@ -40,7 +40,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 20px;
     background-color: transparent;
     color: @fg0;
 }
