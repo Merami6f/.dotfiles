@@ -26,6 +26,8 @@ noremap <leader>sv :source $MYVIMRC<cr>
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '>-4<cr>gv=gv
 
+noremap <leader>e :24Lex<cr> 
+
 noremap <leader>ff :Files<cr>
 noremap <leader>fg :RG<cr>
 noremap <leader>b :Buffers<cr>
