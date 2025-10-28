@@ -1,5 +1,4 @@
 " Options 
-colorscheme retrobox
 set background=dark
 
 syntax on
@@ -42,15 +41,47 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'morhetz/gruvbox'
 call plug#end()
+
+" colorscheme
+colorscheme gruvbox
+let g:gruvbox_contrast_dark ='soft'
 
 " Statusline
 set laststatus=2
 set statusline=
+set statusline+=%1*
+set statusline+=<
+set statusline+=<
+set statusline+=\ 
 set statusline+=%{StatuslineMode()}
+set statusline+=\ 
+set statusline+=>
+set statusline+=>
+set statusline+=%3*
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%f
+set statusline+=\ 
 set statusline+=%m
 set statusline+=%=
-set statusline+=%F
+set statusline+=%2*
+set statusline+=%{&ff}
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=|
+set statusline+=%l
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=:
+set statusline+=%L
+hi User1 ctermbg=grey ctermfg=black guibg=grey guifg=black
+hi User3 ctermbg=black ctermfg=lightgray guibg=black guifg=lightgray
+hi User2 ctermbg=darkgray ctermfg=black guibg=darkgray guifg=black
 
 function! StatuslineMode()
   let l:mode=mode()
@@ -72,3 +103,9 @@ function! StatuslineMode()
     return "SHELL"
   endif
 endfunction
+
+function! Formatonsave()
+  let l:formatdiff = 1
+  pyf /usr/share/clang/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.cpp, *.c call Formatonsave()
