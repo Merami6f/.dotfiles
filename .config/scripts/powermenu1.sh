@@ -89,9 +89,9 @@ case ${chosen} in
 		fi
         ;;
     $suspend)
-		run_cmd sleep
+		run_cmd 'sleep'
         ;;
     $logout)
-		run_cmd --logout
+		run_cmd 'hyprctl dispatch exit'
         ;;
 esac

@@ -1,6 +1,6 @@
 " Options 
 set background=dark
-
+set t_Co=256
 syntax on
 set number
 set relativenumber
@@ -43,66 +43,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/sonokai'
 call plug#end()
 
 " colorscheme
-colorscheme gruvbox
-let g:gruvbox_contrast_dark ='soft'
-
-" Statusline
-set laststatus=2
-set statusline=
-set statusline+=%1*
-set statusline+=<
-set statusline+=<
-set statusline+=\ 
-set statusline+=%{StatuslineMode()}
-set statusline+=\ 
-set statusline+=>
-set statusline+=>
-set statusline+=%3*
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=%f
-set statusline+=\ 
-set statusline+=%m
-set statusline+=%=
-set statusline+=%2*
-set statusline+=%{&ff}
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=|
-set statusline+=%l
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=:
-set statusline+=%L
-hi User1 ctermbg=grey ctermfg=black guibg=grey guifg=black
-hi User3 ctermbg=black ctermfg=lightgray guibg=black guifg=lightgray
-hi User2 ctermbg=darkgray ctermfg=black guibg=darkgray guifg=black
-
-function! StatuslineMode()
-  let l:mode=mode()
-  if l:mode==#"n"
-    return "NORMAL"
-  elseif l:mode==?"v"
-    return "VISUAL"
-  elseif l:mode==#"i"
-    return "INSERT"
-  elseif l:mode==#"R"
-    return "REPLACE"
-  elseif l:mode==?"s"
-    return "SELECT"
-  elseif l:mode==#"t"
-    return "TERMINAL"
-  elseif l:mode==#"c"
-    return "COMMAND"
-  elseif l:mode==#"!"
-    return "SHELL"
-  endif
-endfunction
+colorscheme sonokai
+"colorscheme gruvbox
+"let g:gruvbox_contrast_dark ='soft'
 
 function! Formatonsave()
   let l:formatdiff = 1
