@@ -1,6 +1,11 @@
 " Options 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+set nocompatible
 set background=dark
 set t_Co=256
+
+
 syntax on
 set number
 set relativenumber
@@ -44,6 +49,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " colorscheme
