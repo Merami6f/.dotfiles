@@ -18,7 +18,7 @@ configuration {
 
 /* ---- Load pywal colors (custom wal template) ---- */
 @import "/shared/fonts.rasi"
-@import "/shared/retrobox.rasi"
+@import "/shared/sonokai.rasi"
 
 /* ---- Window ---- */
 window {
@@ -119,7 +119,7 @@ button {
 }
 
 button selected {
-    background-color:             blue;
+    background-color:             @blue;
     text-color:                   @fg0;
 }
 
@@ -169,7 +169,7 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color:            @blue;
+    background-color:            @aqua;
     text-color:                  @fg0;
 }
 
