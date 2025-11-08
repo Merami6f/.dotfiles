@@ -1,0 +1,183 @@
+@import "./colors/sonokai.css";
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: @bg0;
+    border-bottom: 2px solid @aqua;
+    color: @fg0;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 1;
+}
+
+window#waybar.empty {
+    background-color: @bg0;
+}
+window#waybar.solo {
+    background-color: @bg0;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid @aqua;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @aqua;
+}
+
+#pulseaudio:hover {
+    background-color: @bg0;
+}
+
+#workspaces button {
+    padding: 0 20px;
+    background-color: transparent;
+    color: @fg0;
+}
+
+#workspaces button:hover {
+    background: @bg3;
+}
+
+#workspaces button.focused {
+    background-color: @bg2;
+    box-shadow: inset 0 -3px @bg4;
+}
+
+#workspaces button.active {
+    background-color: @bg2;
+    box-shadow: inset 0 -3px @blue;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+#mode {
+    background-color: @bg2;
+    box-shadow: inset 0 -3px @fg0;
+    border-bottom: 1px solid @aqua;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray,
+#mpd {
+    padding: 0 5px;
+    color: @fg0;
+    background-color: transparent;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+    border-bottom: 1px solid @aqua;
+}
+
+
+#battery.charging, #battery.plugged {
+    color: @fg0;
+    background-color: @green;
+    border-bottom: 1px solid @aqua;
+}
+
+@keyframes blink {
+    to {
+        background-color: @bg0;
+        color: @fg0;
+    	border-bottom: 1px solid @aqua;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @fg0;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-bottom: 1px solid @aqua;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+    border-bottom: 1px solid @aqua;
+}
+
+#power-profiles-daemon.performance {
+    background-color: @bg0;
+    color: @fg0;
+    border-bottom: 1px solid @aqua;
+}
+
+
+label:focus {
+    background-color: @bg0;
+    border-bottom: 1px solid @aqua;
+}
+
+
+#network.disconnected {
+    background-color: #f53c3c;
+    border-bottom: 1px solid @aqua;
+}
+
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+    border-bottom: 1px solid @aqua;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+    border-bottom: 1px solid @aqua;
+}
+
+#tray {
+    background-color: #2980b9;
+    border-bottom: 1px solid @aqua;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+    border-bottom: 1px solid @aqua;
+}
+
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+    border-bottom: 1px solid @aqua;
+}
+

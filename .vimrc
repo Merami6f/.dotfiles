@@ -34,7 +34,7 @@ noremap <leader>e :24Lex<cr>
 
 noremap <leader>ff :Files<cr>
 noremap <leader>fg :RG<cr>
-noremap <leader>b :Buffers<cr>
+noremap <leader>fb :Buffers<cr>
 
 " Vim-plugin
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
