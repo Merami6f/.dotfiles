@@ -1,3 +1,0 @@
-#! /usr/bin/env bash
-
-grim - | wl-copy
