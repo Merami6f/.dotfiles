@@ -74,6 +74,7 @@ button:hover {
 #network,
 #pulseaudio,
 #wireplumber,
+#backlight,
 #tray,
 #mpd {
     padding: 0 5px;
