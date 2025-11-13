@@ -19,6 +19,7 @@
         "pulseaudio",
         "network",
         "battery",
+		"backlight",
         "battery#bat2",
         "clock",
         "tray",
@@ -111,6 +112,11 @@
         "balanced": "",
         "power-saver": ""
       }
+    },
+	 "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
