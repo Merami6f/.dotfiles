@@ -24,17 +24,18 @@ set smartindent
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+
 " Keymaps
 let mapleader= " "
 noremap <leader>sv :source $MYVIMRC<cr>
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '>-4<cr>gv=gv
 
-noremap <leader>e :24Lex<cr> 
-
 noremap <leader>ff :Files<cr>
 noremap <leader>fg :RG<cr>
 noremap <leader>fb :Buffers<cr>
+" copy file path
+noremap yp :let @" = expand("%")<cr>
 
 " Vim-plugin
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
