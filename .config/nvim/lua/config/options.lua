@@ -1,4 +1,5 @@
 -- Options
+vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
 vim.opt.conceallevel = 2
 -- Indention
 vim.opt.tabstop = 2
@@ -25,7 +26,7 @@ vim.opt.scrolloff = 10
 vim.opt.completeopt = "menuone,noinsert,noselect"
 
 -- Behaviour
-vim.opt.syntax= "on"
+vim.opt.syntax = "on"
 vim.opt.hidden = true
 vim.opt.errorbells = false
 vim.opt.swapfile = false
@@ -43,5 +44,4 @@ vim.opt.modifiable = true
 vim.opt.encoding = "UTF-8"
 vim.opt.background = "dark"
 vim.opt.cursorline = true
-vim.opt.foldcolumn = "1" 
-
+vim.opt.foldcolumn = "1"
