@@ -1,6 +1,3 @@
-
-
-
 -- NOTE: read :h autocommand
 -- NOTE: read :h events
 -- NOTE: autocmd [grup] event pattren command
@@ -12,15 +9,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ timeout = 150 })
   end,
-})
-
-
-
-local lsp_grup = vim.api.nvim_create_augroup("lspGrup", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = lsp_grup,
-  bufnr = bufnr,
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end
 })
