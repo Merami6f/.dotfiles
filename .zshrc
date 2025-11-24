@@ -49,7 +49,7 @@ zle -N zle-keymap-select
  	if [[ $staged == '0' ]]; then
  		:
  	else
- 		echo '+'$staged''
+ 		echo '::+'$staged''
  	fi
  }
  

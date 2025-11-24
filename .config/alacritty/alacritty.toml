@@ -20,7 +20,7 @@ decorations = "Full"
 decorations_theme_variant = "Dark" #"Light"  
 
 [font]
-
+# linux list fonts cmd= fc-list
 normal = { family = "Iosevka Custom", style = "Regular" }
 bold = { family = "Iosevka Custom", style = "Bold" }
 italic = { family = "Iosevka Custom", style = "Italic" }
