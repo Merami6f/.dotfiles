@@ -18,6 +18,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
+	color: @fg0;
     background-color: @bg0;
 }
 window#waybar.solo {
