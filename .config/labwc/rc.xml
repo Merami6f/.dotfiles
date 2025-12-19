@@ -16,6 +16,17 @@
   <keyboard>
     <default />
     <!-- Use a different terminal emulator -->
+    <keybind key="S-Print">
+		<action name="Execute" command="~/.config/scripts/s_screenshoot.sh" />
+    </keybind>
+    <keybind key="Print">
+		<action name="Execute" command="~/.config/scripts/screenshoot.sh" />
+    </keybind>
+	<!--
+    <keybind key="W-v">
+		<action name="Execute" command="cliphist list | rofi -dmenu -theme "~/.config/rofi/clipboard.rasi" | cliphist decode | wl-copy" />
+		</keybind>
+	-->
     <keybind key="W-r">
 		<action name="Execute" command="dolphin" />
     </keybind>

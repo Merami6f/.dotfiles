@@ -26,6 +26,9 @@ waybar >/dev/null 2>&1 &
 # as mako to function correctly. Thunderbird is an example of this.
 mako >/dev/null 2>&1 &
 
+# polkit
+/usr/lib/polkit-kde-authentication-agent-1 >/dev/null 2>&1 &
+
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
 #
 # Note that in the context of idle system power management, it is *NOT* a good
