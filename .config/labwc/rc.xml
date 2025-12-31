@@ -12,7 +12,16 @@
     <cornerRadius>8</cornerRadius>
     <font name="sans" size="10" />
   </theme>
-
+    <desktops>
+      <popupTime>0</popupTime>
+      <names>
+        <name>1</name>
+        <name>2</name>
+        <name>3</name>
+        <name>4</name>
+      </names>
+	  <prefix>" "</prefix>
+    </desktops>
   <keyboard>
     <default />
     <!-- Use a different terminal emulator -->

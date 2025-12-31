@@ -8,12 +8,10 @@
     "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "sway/scratchpad",
-		"wlr/taskbar",
+        "wlr/taskbar"
     ],
     "modules-center": [
-        "sway/window"
+        "ext/workspaces"
     ],
     "modules-right": [
         "mpd",
@@ -23,25 +21,29 @@
 		"backlight",
         "battery#bat2",
         "clock",
-        "tray",
+        "tray"
     ],
     // Modules configuration
-     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "warp-on-scroll": false,
-         "format": "{name}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }
-     },
+	"ext/workspaces": {
+	"format": "{name} {icon}",
+	"on-click": "activate",
+	"format-names" : {
+		"Workspace 1": "1",
+		"Workspace 2": "2",
+		"Workspace 3": "3",
+		"Workspace 4": "4",
+		"Workspace 5": "5"
+	},
+	"format-icons": {
+		"Workspace 1": "",
+		"Workspace 2": "",
+		"Workspace 3": "",
+		"Workspace 4": "",
+		"active": "",
+		"default": ""
+	},
+	"sort-by-id": true
+},
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -49,6 +51,10 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
+	"wlr/taskbar": {
+		"on-click" : "minimize-raise",
+	},
+	// left
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) | {volume}% ",
 	"format-disconnected": "Disconnected ",
@@ -76,7 +82,7 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
     "clock": {
