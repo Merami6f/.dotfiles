@@ -14,7 +14,7 @@ swaybg -i ~/Pictures/8.png -m fill >/dev/null 2>&1 &
 kanshi >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
-waybar >/dev/null 2>&1 &
+waybar -c ~/.config/waybar/labwc/simple.jsonc -s ~/.config/waybar/labwc/simple.css >/dev/null 2>&1 &
 
 # To delay the launch of a particular client it is suggested that the following
 # syntax is used: ( sleep X ; foo ) &
@@ -28,6 +28,8 @@ mako >/dev/null 2>&1 &
 
 # polkit
 /usr/lib/polkit-kde-authentication-agent-1 >/dev/null 2>&1 &
+# nm-applet
+nm-applet --indicator >/dev/null 2>&1 &
 
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
 #
