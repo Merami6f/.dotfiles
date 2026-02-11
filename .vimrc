@@ -63,3 +63,4 @@ function! Formatonsave()
   pyf /usr/share/clang/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.cc,*.cpp, *.c call Formatonsave()
+autocmd FileType markdown iabbrev id ---<CR>id:<CR>alliases:<CR>tags:<CR>---
