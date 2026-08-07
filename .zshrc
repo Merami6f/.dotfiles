@@ -10,23 +10,23 @@ autoload -Uz compinit
 compinit
 
 ## vi mode
-bindkey -v
-KEYTIMEOUT=2
-
-normal='-- NORMAL --'
-insert='-- INSERT --'
-function zle-line-init zle-keymap-select {
-    case ${KEYMAP} in
-        (vicmd)      VI_MODE=$normal ;;
-        (main|viins) VI_MODE="$insert" ;;
-        (*)          VI_MODE="$insert" ;;
-    esac
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
+# bindkey -v
+# KEYTIMEOUT=2
+# 
+# normal='-- NORMAL --'
+# insert='-- INSERT --'
+# function zle-line-init zle-keymap-select {
+#     case ${KEYMAP} in
+#         (vicmd)      VI_MODE=$normal ;;
+#         (main|viins) VI_MODE="$insert" ;;
+#         (*)          VI_MODE="$insert" ;;
+#     esac
+#     zle reset-prompt
+# }
+# 
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# 
 ## promt line
  function git_branch(){
  	branch=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)

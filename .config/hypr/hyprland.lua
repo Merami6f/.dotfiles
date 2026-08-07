@@ -19,7 +19,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "auto",
+    scale    = "1",
 })
 
 
@@ -28,10 +28,11 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "foot"
-local fileManager = "dolphin"
-local menu        = "~/.config/scripts/rofi/launcher.sh"
-
+local terminal		= "foot"
+local fileManager	= "dolphin"
+local menu			= "~/.config/scripts/rofi/launcher.sh"
+local grim			= "grim - | wl-copy"
+local bar			= "waybar -c ~/.config/waybar/hyprland/configs/simple.jsonc -s ~/.config/waybar/hyprland/styles/simple.css"
 
 -------------------
 ---- AUTOSTART ----
@@ -42,11 +43,12 @@ local menu        = "~/.config/scripts/rofi/launcher.sh"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+ hl.on("hyprland.start", function () 
+   hl.exec_cmd("hyprpaper & hypridle & hypridle & hyprsunset")
+   hl.exec_cmd("nm-applet --indicator")
+   hl.exec_cmd("wl-paste --watch cliphist store")
+   hl.exec_cmd("waybar -c ~/.config/waybar/hyprland/configs/simple.jsonc -s ~/.config/waybar/hyprland/styles/simple.css")
+ end)
 
 
 -------------------------------
@@ -86,7 +88,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 20,
+        gaps_out = 10,
 
         border_size = 2,
 
