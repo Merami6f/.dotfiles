@@ -252,7 +252,6 @@ hl.device({
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
-
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
@@ -266,7 +265,13 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/cliphist.sh"))
 
+-- Screenshot with grim slurp
+hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/selected_SS.sh"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/full_SS.sh"))
+
+-- hl.bind("Print", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme "~/.config/rofi/clipboard.rasi" | cliphist decode | wl-copy "))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
