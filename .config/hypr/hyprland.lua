@@ -266,7 +266,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/cliphist.sh"))
-hl.bind("Tab", hl.dsp.window.cycle_next())
+hl.bind("ALT + Tab", hl.dsp.window.cycle_next())
 
 hl.bind("SUPER + tab", function ()
     local layouts     = { "scrolling", "dwindle", "master", "monocle" }
