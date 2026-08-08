@@ -266,6 +266,60 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/cliphist.sh"))
+hl.bind("Tab", hl.dsp.window.cycle_next())
+
+hl.bind("SUPER + tab", function ()
+    local layouts     = { "scrolling", "dwindle", "master", "monocle" }
+    local workspace   = hl.get_active_workspace()
+	if hl.get_active_special_workspace() then
+		workspace = hl.get_active_special_workspace()
+	end
+
+    local next_layout = "dwindle"
+
+    if not workspace then
+        return
+    end
+
+    for i = 1, #layouts do
+        if layouts[i] == workspace.tiled_layout then
+            local next_layout_idx = (i % #layouts) + 1
+            next_layout = layouts[next_layout_idx]
+            break
+        end
+    end
+
+	if workspace.special then
+		hl.workspace_rule({ workspace = tostring(workspace.name), layout = next_layout })
+	else
+		hl.workspace_rule({ workspace = tostring(workspace.id), layout = next_layout })
+	end
+end)
+
+local function layout_bind(bind_table)
+    return function ()
+        local workspace = hl.get_active_special_workspace() or
+                          hl.get_active_workspace()
+
+        if not workspace then
+            return
+        end
+
+        local layout = workspace.tiled_layout
+
+        if bind_table[layout] then
+            hl.dispatch(bind_table[layout])
+        end
+    end
+end
+
+hl.bind("SUPER + A", layout_bind({
+    scrolling = hl.dsp.layout("swapcol l"),  -- Scrolling: swap column with left one
+    dwindle   = hl.dsp.layout("swapsplit"),  -- Dwindle: swap window split
+    monocle   = hl.dsp.layout("cycleprev"),  -- Monocle and master: cycle prev window
+    master    = hl.dsp.layout("cycleprev"),
+}))
+
 
 -- Screenshot with grim slurp
 hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/selected_SS.sh"))
