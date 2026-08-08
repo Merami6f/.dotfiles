@@ -31,8 +31,6 @@ hl.monitor({
 local terminal		= "foot"
 local fileManager	= "dolphin"
 local menu			= "~/.config/scripts/rofi/launcher.sh"
-local grim			= "grim - | wl-copy"
-local bar			= "waybar -c ~/.config/waybar/hyprland/configs/simple.jsonc -s ~/.config/waybar/hyprland/styles/simple.css"
 
 -------------------
 ---- AUTOSTART ----
