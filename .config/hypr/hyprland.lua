@@ -1,15 +1,3 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
-
 ------------------
 ---- MONITORS ----
 ------------------
@@ -28,7 +16,7 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal		= "foot"
+local terminal		= "alacritty"
 local fileManager	= "dolphin"
 local menu			= "~/.config/scripts/rofi/launcher.sh"
 
@@ -44,6 +32,7 @@ local menu			= "~/.config/scripts/rofi/launcher.sh"
  hl.on("hyprland.start", function () 
    hl.exec_cmd("hyprpaper & hypridle & hypridle & hyprsunset")
    hl.exec_cmd("nm-applet --indicator")
+   hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("wl-paste --watch cliphist store")
    hl.exec_cmd("waybar -c ~/.config/waybar/hyprland/configs/simple.jsonc -s ~/.config/waybar/hyprland/styles/simple.css")
  end)
@@ -259,7 +248,7 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only

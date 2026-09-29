@@ -2,47 +2,56 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/merami/.zshrc'
-
 autoload -U compinit 
 compinit
 
+# custom backword deletion
+# ref= https://www.codyhiar.com/blog/custom-backward-word-deletion-in-zsh/
+my-backward-delete-word(){
+    local WORDCHARS=$WORDCHARS
+    WORDCHARS="${WORDCHARS//:}"
+    WORDCHARS="${WORDCHARS/\/}"
+    WORDCHARS="${WORDCHARS//.}"
+    zle backward-delete-word
+}
+zle -N my-backward-delete-word
+bindkey "^W" my-backward-delete-word
+
 ## promt line
- function git_branch(){
- 	branch=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)
- 	if [[ $branch == "" ]]; then
- 		:
- 	else
- 		echo '󰊢 '$branch''
- 	fi
- }
- function git_modified(){
- 	modified=$(git ls-files -m -o 2> /dev/null | wc -l)
- 	if [[ $modified == '0' ]]; then
- 		:
- 	else
- 		echo '::!'$modified''
- 	fi
- }
- function git_staged(){
- 	staged=$(git diff --name-only --cached 2> /dev/null | wc -l)
- 	if [[ $staged == '0' ]]; then
- 		:
- 	else
- 		echo '::+'$staged''
- 	fi
- }
- 
- setopt prompt_subst
+function git_branch(){
+    branch=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)
+    if [[ $branch == "" ]]; then
+        :
+    else
+        echo '󰊢 '$branch''
+    fi
+}
+function git_modified(){
+    modified=$(git ls-files -m -o 2> /dev/null | wc -l)
+    if [[ $modified == '0' ]]; then
+        :
+    else
+        echo '::!'$modified''
+    fi
+}
+function git_staged(){
+    staged=$(git diff --name-only --cached 2> /dev/null | wc -l)
+    if [[ $staged == '0' ]]; then
+        :
+    else
+        echo '::+'$staged''
+    fi
+}
+
+setopt prompt_subst
 PROMPT='  %~ $(git_branch)$(git_modified)$(git_staged) ${newline}$ '
 newline=$'\n'
 ## end promt line
 
 
 # define 
- export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ## source
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
